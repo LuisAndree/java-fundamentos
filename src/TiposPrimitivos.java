@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TiposPrimitivos {
     public static void main(String[] args) {
         // Inferencia
@@ -21,7 +23,7 @@ public class TiposPrimitivos {
         boolean isDev = false;
 
         // Condicionis
-        if ("Luis Andre" == meuNome) {
+        if (meuNome.isBlank()) {
             isDev = true;
             System.out.println(isDev);
         } else if (false) {
@@ -32,5 +34,27 @@ public class TiposPrimitivos {
 
         // vetor
         int[] colecaoDeInteiros = {1,2,3,4,5};
+        int[] colecaoDeInteiros2 = new int[30];
+
+        for (int i = 0; i < colecaoDeInteiros.length; i++) {
+            System.out.println(colecaoDeInteiros[i]);
+        }
+
+        // ArrayList
+        ArrayList<String> nomes = new ArrayList<>();
+        nomes.add(nomeVariavel);
+        nomes.add("Maria");
+        nomes.add("Rodrigues");
+        nomes.add("Ticia");
+        System.out.println(nomes);
+        System.out.println(nomes.get(3));
+        System.out.println(nomes.contains("Maria"));
+        System.out.println(nomes.remove("Rodrigues"));
+        System.out.println(nomes);
+
+        for (String nome : nomes) {
+            System.out.println(nome);
+        }
+
     }
 }
