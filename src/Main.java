@@ -1,4 +1,9 @@
+import com.andre.veiculo.Carrinho;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -80,6 +85,26 @@ public class Main {
 
         System.out.println(humano.idade + " anos");
         humano.respirar();
+
+        Carrinho gol = new Carrinho("gol", "preto", 97, "12345678");
+        System.out.println(gol.toString());
+
+        List<String> listaNomes = new ArrayList<>();
+        listaNomes.add("Fernanda autista");
+        listaNomes.add("Pedro");
+        listaNomes.add("Fernanda tdah");
+        listaNomes.add("Antonio");
+        listaNomes.add("Fernanda esuizofrenica");
+        System.out.println("Nomes: " + listaNomes);
+
+        Set<String> fernandas = listaNomes
+                .stream()
+                .filter(n -> n.startsWith("Fernanda"))
+                .map(n -> n.replace(" ", ""))
+                .map(String::toUpperCase)
+                        .collect(Collectors.toSet());
+        System.out.println("Fernandas: " + fernandas);
+
 
     }
 }
